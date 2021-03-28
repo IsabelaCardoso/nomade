@@ -13,12 +13,12 @@ import cardImage6 from '../image/cardImage6.svg';
 function PlanningPage() {
   return(
     <div>
+      oi
       <Header />
       <Destinations />
       <MicroGoals />
       <Consultants/>
       <Services />
-
     </div>
   )
 }
