@@ -89,11 +89,13 @@ function Destinations() {
 
   return(
     <div>
-      <h1>Montei esse planejamento conforme suas preferências</h1>
-      <img src="" alt="" />
-      <div className="destiny-cards">
+      <h1 className="title">Montei esse planejamento conforme suas preferências</h1>
+      <div className="subtitles">
+        <img src="" alt="" />
         <h2>Sugestões de destinos para Mês/Ano</h2>
         <p>Selecione 1 opção:</p>
+      </div>
+      <div className="destiny-cards">
         <div className="columns">
         {destinyCards()}
         </div>
