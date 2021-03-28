@@ -1,7 +1,16 @@
 import Header from '../Components/Header';
+import { useState } from 'react';
 
 
 function Form() {
+  const [city, setCity] = useState();
+  const [beachMountain, setBeachMoutains] = useState('');
+  const [hotCold, setHotCold] = useState();
+  const [services, setServices] = useState();
+  const [regions, setRegions] = useState();
+  const [locality, setLocality] = useState();
+  const [nacionality, setNacionality] = useState();
+
   return(
     <div>
       <Header />
@@ -17,29 +26,55 @@ function Form() {
             </label>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col">           
               <span>O que você prefere?</span> 
               <label>
-                <input type="radio" name="beach-mountain" />
+                <input
+                  id="beach"
+                  value={ beachMountain }
+                  type="radio"
+                  name="beach-mountain"
+                  onClick={ (event) => setBeachMoutains(event.target.id) }
+                />
                 Praia
               </label>
               <label>
-                <input type="radio" name="beach-mountain" />
+                <input
+                  id="mountain"
+                  value={ beachMountain }
+                  type="radio"
+                  name="beach-mountain"
+                  onClick={ (event) => setBeachMoutains(event.target.id) }
+                />
                 Montanha
               </label>
               <label>
-                <input type="radio" name="beach-mountain" />
+                <input
+                  value="beach mountain"
+                  type="radio"
+                  name="beach-mountain"
+                  onClick={ (event) => setBeachMoutains(event.target.value) }
+                />
                 Ambos
-              </label>        
+              </label>
             </div>
             <div className="col">
               <span>Qual a temperatura ideal para você?</span>
               <label>
-                <input type="radio" name="cold-hot-weather" />
+                <input
+                  value="hot"
+                  type="radio"
+                  name="cold-hot-weather"
+                  // onClick={ (event) => setHot(event.target.value) }
+                />
                 Calor
               </label>
               <label>
-                <input type="radio" name="cold-hot-weather" />
+                <input
+                  type="radio"
+                  name="cold-hot-weather"
+                  onClick={ (event) => setBeachMoutains(event.target.value) }
+                />
                 Frio
               </label>
               <label>
@@ -52,23 +87,23 @@ function Form() {
             <div className="col">
             <span>Quais serviços você utiliza atualmente?</span>
               <label>
-                <input type="checkbox" name="cold-hot-weather" />
+                <input type="checkbox" name="services" />
                 Sites de reserva hospedagem online
               </label>
               <label>
-                <input type="checkbox" name="cold-hot-weather" />
+                <input type="checkbox" name="services" />
                 Compras online
               </label>
               <label>
-                <input type="checkbox" name="cold-hot-weather" />
+                <input type="checkbox" name="services" />
                 Transporte particular
               </label>
               <label>
-                <input type="checkbox" name="cold-hot-weather" />
+                <input type="checkbox" name="services" />
                 Aluguel de carros
               </label>
               <label>
-                <input type="checkbox" name="cold-hot-weather" />
+                <input type="checkbox" name="services" />
                 Delivery de comida
               </label>
             </div>
