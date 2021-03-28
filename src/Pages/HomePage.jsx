@@ -63,7 +63,7 @@ function HomePage() {
         <div className="has-text-centered">
           <img src={WorldConnection} width="30%" />
           <h3 className="title is-3 has-text-grey has-text-weight-bold mb-6">Vamos iniciar seu planejamento<br />personalizado agora</h3>
-          <Link className="button is-primary is-large" to="/form">Quero ser nomadê</Link>
+          <Link className="button is-primary is-large" to="/formulario">Quero ser nomadê</Link>
         </div>
       </div>
 
