@@ -10,10 +10,18 @@ function PlanningPage() {
     <div>
       <Header />
       <div className="container">
-        <Destinations />
-        <MicroGoals />
-        <Consultants />
-        <Services />
+        <div className="my-6">
+          <Destinations />
+        </div>
+        <div className="my-6">
+          <MicroGoals />
+        </div>
+        <div className="my-6">
+          <Consultants />
+        </div>
+        <div className="my-6">
+          <Services />
+        </div>
       </div>
       <Footer />
     </div>
