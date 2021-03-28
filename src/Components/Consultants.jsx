@@ -8,7 +8,7 @@ import TwitterIcon from '../image/twitter.svg'
 
 function Consultants() {
   return(
-    <div>
+    <div className="my-6">
       <div className="is-flex mb-6">
         <div>
           <img src={ShareIcon} width={65} />
