@@ -1,14 +1,28 @@
 import Header from '../Components/Header';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Form() {
   const [city, setCity] = useState();
   const [beachMountain, setBeachMoutains] = useState('');
-  const [hotCold, setHotCold] = useState();
-  const [services, setServices] = useState();
-  const [regions, setRegions] = useState();
-  const [locality, setLocality] = useState();
-  const [nacionality, setNacionality] = useState();
+  const [hotCold, setHotCold] = useState('');
+  const [services, setServices] = useState([]);
+  const [countryCapital, setCountryCapital] = useState();
+  const [regions, setRegions] = useState('');
+  const [nacionality, setNationality] = useState();
+  const [month, setMonth] = useState();
+  const [year, setYear] = useState();
+
+  function handleCheck(event) {
+    const checked = services.includes(event.target.id);
+    if(checked) {
+      const filterService = services.filter((service) => service !== event.target.id)
+      setServices(filterService)
+    } else {
+      setServices([...services, event.target.id])
+    }
+  }
 
   return(
     <div>
@@ -21,14 +35,17 @@ function Form() {
           <div className="column is-half">
             <div className="field mb-6">
               <label
+                htmlFor="current-city"
                 className="label has-text-weight-medium has-text-grey"
               >
                 Qual sua cidade atual?
               </label>
               <div className="control">
                 <input
-                  className="input is-medium"
                   type="text"
+                  id="current-city"
+                  className="input is-medium"
+                  onChange={ (event) => setCity(event.target.value) }
                   placeholder="Digite sua cidade"
                 />
               </div>
@@ -67,10 +84,11 @@ function Form() {
                     className="radio label-spacing"
                   >
                     <input
-                      value="beach mountain"
+                      id="beach mountain"
+                      value={ beachMountain }
                       type="radio"
                       name="beach-mountain"
-                      onClick={ (event) => setBeachMoutains(event.target.value) }
+                      onClick={ (event) => setBeachMoutains(event.target.id) }
                     />
                     Ambos
                   </label>
@@ -80,13 +98,15 @@ function Form() {
                 <span className="mb-5">Qual a temperatura ideal para você?</span>
                 <div className="control">
                   <label
+                    htmlFor="hot"
                     className="radio label-spacing"
                   >
                     <input
-                      value="hot"
+                      id="hot"
+                      value={ hotCold }
                       type="radio"
                       name="cold-hot-weather"
-                      // onClick={ (event) => setHot(event.target.value) }
+                      onClick={ (event) => setHotCold(event.target.id) }
                     />
                     Calor
                   </label>
@@ -95,9 +115,11 @@ function Form() {
                     className="radio label-spacing"
                   >
                     <input
+                      id="cold"
+                      value={ hotCold }
                       type="radio"
                       name="cold-hot-weather"
-                      onClick={ (event) => setBeachMoutains(event.target.value) }
+                      onClick={ (event) => setHotCold(event.target.id) }
                     />
                     Frio
                   </label>
@@ -105,7 +127,13 @@ function Form() {
                   <label
                     className="radio label-spacing"
                   >
-                    <input type="radio" name="cold-hot-weather" />
+                    <input
+                      id="hot cold"
+                      value={ hotCold }
+                      type="radio"
+                      name="cold-hot-weather"
+                      onClick={ (event) => setHotCold(event.target.id) }
+                    />
                     Ambos
                   </label>
                 </div>
@@ -117,36 +145,70 @@ function Form() {
                 <div className="control">
                   <label
                     className="checkbox"
+                    htmlFor="sites de reserva online"
                   >
-                    <input type="checkbox" name="services" />
+                    <input
+                      type="checkbox"
+                      name="services"
+                      value={ services }
+                      onClick={(event) => handleCheck(event)}
+                    />
                     Sites de reserva hospedagem online
                   </label>
                   <br />
                   <label
                     className="checkbox"
+                    htmlFor="compras online"
                   >
-                    <input type="checkbox" name="services" />
+                    <input
+                      id="compras online"
+                      type="checkbox"
+                      value={ services }
+                      name="services"
+                      onClick={(event) => handleCheck(event)}
+                    />
                     Compras online
                   </label>
                   <br />
                   <label
                     className="checkbox"
+                    htmlFor="transporte particular"
                   >
-                    <input type="checkbox" name="services" />
+                    <input
+                      type="checkbox"
+                      name="services"
+                      id="transporte particular"
+                      value={ services }
+                      onClick={(event) => handleCheck(event)}
+                    />
                     Transporte particular
                   </label>
                   <br />
                   <label
                     className="checkbox"
+                    htmlFor="aluguel de carros"
                   >
-                    <input type="checkbox" name="services" />
+                    <input
+                      type="checkbox"
+                      id="aluguel de carros"
+                      value={ services }
+                      name="services"
+                      onClick={(event) => handleCheck(event)}
+                    />
                     Aluguel de carros
                   </label>
                   <br />
                   <label
                     className="checkbox"
+                    htmlFor="delivery de comida"
                   >
-                    <input type="checkbox" name="services" />
+                    <input
+                      id="delivery de comida"
+                      value={ services }
+                      type="checkbox"
+                      name="services"
+                      onClick={(event) => handleCheck(event)}
+                    />
                     Delivery de comida
                   </label>
                 </div>
@@ -168,86 +230,112 @@ function Form() {
                 />
               </div>
             </div>
-            <div className="columns mb-6">
-              <div className="column">
-                <span className="mb-5">Qual localidade você prefere?</span>
-                <div className="control">
-                  <label
-                    className="radio label-spacing"
-                  >
-                    <input type="radio" name="country-capital" />
-                    Capital
-                  </label>
-                  <br />
-                  <label
-                    className="radio label-spacing"
-                  >
-                    <input type="radio" name="country-capital" />
-                    Interior
-                  </label>
-                  <br />
-                  <label
-                    className="radio label-spacing"
-                  >
-                    <input type="radio" name="country-capital" />
-                    Ambos
-                  </label>
-                </div>
+            <div className="column mb-6">
+              <span className="mb-5">Qual localidade você prefere?</span>
+              <div className="control">
+                <label
+                  className="radio"
+                  htmlFor="capital"
+                >
+                  <input
+                    type="radio"
+                    name="country-capital"
+                    id="capital"
+                    value={ countryCapital }
+                    onClick={(event) => setCountryCapital(event.target.id)}
+                  />
+                  Capital
+                </label>
+                <br />
+                <label
+                  className="radio"
+                  htmlFor="country"
+                >
+                  <input
+                    type="radio"
+                    name="country-capital"
+                    id="country"
+                    value={ countryCapital }
+                    onClick={ (event) => setCountryCapital(event.target.id)}
+                  />
+                  Interior
+                </label>
+                <br />
+                <label
+                  className="radio"
+                  htmlFor="country-capital"
+                >
+                  <input
+                    type="radio"
+                    name="country-capital"
+                    id="country-capital"
+                    value={ countryCapital }
+                    onClick={ (event) => setCountryCapital(event.target.id) }
+                  />
+                  Ambos
+                </label>
               </div>
-              <div className="column">
-                <span className="mb-5">Seu próximo destino será:</span>
-                <div className="control">
-                  <label
-                    className="radio label-spacing"
+            </div>
+          <div className="columns">
+            <div className="field column">
+              <label className="label">Mês de previsão de ida</label>
+              <div className="control">
+                <div className="select">
+                  <select
+                    id="month"
+                    value={ month }
+                    onChange={(event) => setMonth(event.target.value)}
                   >
-                    <input type="radio" name="national-international" />
-                    Nacional
-                  </label>
-                  <br />
-                  <label
-                    className="radio label-spacing"
-                  >
-                    <input type="radio" name="national-international" />
-                    Internacional
-                  </label>
+                    <option value="january">01 (Janeiro)</option>
+                    <option value="february">02 (Fevereiro)</option>
+                    <option value="march">03 (Março)</option>
+                    <option value="april">04 (Abril)</option>
+                    <option value="may">05 (Maio)</option>
+                    <option value="june">06 (Junho)</option>
+                    <option value="july">07 (Julho)</option>
+                    <option value="august">08 (Agosto)</option>
+                    <option value="september">09 (Setembro)</option>
+                    <option value="october">10 (Outubro)</option>
+                    <option value="november">11 (Novembro)</option>
+                    <option value="december">12 (Dezembro)</option>
+                  </select>
                 </div>
               </div>
             </div>
-            <div className="columns">
-              <div className="field mb-6 column">
-                <label label="label">Mês de previsão de ida</label>
-                <div className="control">
-                  <input
-                    type="text"
-                    className="input is-medium"
-                    placeholder="Mês"
-                  />
-                </div>
-              </div>
-              <div className="field mb-6 column">
-                <label label="label">Ano</label>
-                <div className="control">
-                  <input
-                    type="text"
-                    className="input is-medium"
-                    placeholder="Ano"
-                  />
+            <div className="field column">
+              <label
+                className="label"
+              >
+                Ano
+              </label>
+              <div className="control">
+                <div className="select">
+                  <select
+                    id="year"
+                    value={ year }
+                    onChange={(event) => setYear(event.target.value)}
+                  >
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                  </select>
                 </div>
               </div>
             </div>
           </div>
+              </div>
         </div>
-        <div className="is-flex is-justify-content-center">
-          <button
-            className="button is-primary"
-            type="submit"
-          >
-            Enviar
-          </button>
+          <div className="is-flex is-justify-content-center">
+            <button
+              className="button is-primary"
+              type="submit"
+            >
+              Enviar
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  )
+  );
 }
 
 export default Form;
