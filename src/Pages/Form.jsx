@@ -2,17 +2,15 @@ import Header from '../Components/Header';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
 function Form() {
-  const [city, setCity] = useState();
+  const [city, setCity] = useState('');
   const [beachMountain, setBeachMoutains] = useState('');
   const [hotCold, setHotCold] = useState('');
   const [services, setServices] = useState([]);
-  const [countryCapital, setCountryCapital] = useState();
+  const [countryCapital, setCountryCapital] = useState('');
   const [regions, setRegions] = useState('');
-  const [nacionality, setNationality] = useState();
-  const [month, setMonth] = useState();
-  const [year, setYear] = useState();
+  const [month, setMonth] = useState('01 (Janeiro)');
+  const [year, setYear] = useState('2021');
 
   function handleCheck(event) {
     const checked = services.includes(event.target.id);
@@ -24,11 +22,21 @@ function Form() {
     }
   }
 
+  const widthButton = {
+    width: '50%',
+  };
+
   return(
     <div>
       <Header />
       <div className="container mt-6 has-text-grey">
-        <h1 className="title has-text-centered has-text-primary has-text-weight-bold">Vamos montar<br />sua trilha</h1>
+        <h1
+          className="title has-text-centered has-text-primary has-text-weight-bold"
+        >
+          Vamos montar
+          <br />
+          sua trilha
+        </h1>
         <h2 className="subtitle has-text-grey">DADOS PESSOAIS</h2>
         <hr />
         <div className="columns">
@@ -44,6 +52,7 @@ function Form() {
                 <input
                   type="text"
                   id="current-city"
+                  value={ city }
                   className="input is-medium"
                   onChange={ (event) => setCity(event.target.value) }
                   placeholder="Digite sua cidade"
@@ -148,6 +157,7 @@ function Form() {
                     htmlFor="sites de reserva online"
                   >
                     <input
+                      id="sites de reserva online"
                       type="checkbox"
                       name="services"
                       value={ services }
@@ -216,7 +226,7 @@ function Form() {
             </div>
           </div>
           <div className="column is-half">
-            <div className="field mb-6 row">
+            <div className="field mb-6">
               <label
                 className="label has-text-weight-medium has-text-grey"
               >
@@ -225,60 +235,68 @@ function Form() {
               <div className="control">
                 <input
                   type="text"
+                  value={ regions }
+                  onChange={(event) => setRegions(event.target.value)}
                   className="input is-medium"
                   placeholder="Escolha a região"
                 />
               </div>
             </div>
-            <div className="column mb-6">
-              <span className="mb-5">Qual localidade você prefere?</span>
-              <div className="control">
-                <label
-                  className="radio"
-                  htmlFor="capital"
-                >
-                  <input
-                    type="radio"
-                    name="country-capital"
-                    id="capital"
-                    value={ countryCapital }
-                    onClick={(event) => setCountryCapital(event.target.id)}
-                  />
-                  Capital
-                </label>
-                <br />
-                <label
-                  className="radio"
-                  htmlFor="country"
-                >
-                  <input
-                    type="radio"
-                    name="country-capital"
-                    id="country"
-                    value={ countryCapital }
-                    onClick={ (event) => setCountryCapital(event.target.id)}
-                  />
-                  Interior
-                </label>
-                <br />
-                <label
-                  className="radio"
-                  htmlFor="country-capital"
-                >
-                  <input
-                    type="radio"
-                    name="country-capital"
-                    id="country-capital"
-                    value={ countryCapital }
-                    onClick={ (event) => setCountryCapital(event.target.id) }
-                  />
-                  Ambos
-                </label>
+            <div className="columns">
+              <div className="column mb-6">
+                <span className="mb-5">Qual localidade você prefere?</span>
+                <div className="control">
+                  <label
+                    className="radio"
+                    htmlFor="capital"
+                  >
+                    <input
+                      type="radio"
+                      name="country-capital"
+                      id="capital"
+                      value={ countryCapital }
+                      onClick={(event) => setCountryCapital(event.target.id)}
+                    />
+                    Capital
+                  </label>
+                  <br />
+                  <label
+                    className="radio"
+                    htmlFor="country"
+                  >
+                    <input
+                      type="radio"
+                      name="country-capital"
+                      id="country"
+                      value={ countryCapital }
+                      onClick={ (event) => setCountryCapital(event.target.id)}
+                    />
+                    Interior
+                  </label>
+                  <br />
+                  <label
+                    className="radio"
+                    htmlFor="country-capital"
+                  >
+                    <input
+                      type="radio"
+                      name="country-capital"
+                      id="country-capital"
+                      value={ countryCapital }
+                      onClick={ (event) => setCountryCapital(event.target.id) }
+                    />
+                    Ambos
+                  </label>
+                </div>
               </div>
             </div>
           <div className="columns">
             <div className="field column">
-              <label className="label">Mês de previsão de ida</label>
+              <label
+                className="label has-text-grey has-text-weight-medium"
+              >
+                Mês de previsão de ida
+              </label>
               <div className="control">
                 <div className="select">
                   <select
@@ -304,7 +322,7 @@ function Form() {
             </div>
             <div className="field column">
               <label
-                className="label"
+                className="label has-text-grey has-text-weight-medium"
               >
                 Ano
               </label>
@@ -323,18 +341,21 @@ function Form() {
               </div>
             </div>
           </div>
-              </div>
         </div>
-          <div className="is-flex is-justify-content-center">
+      </div>
+        <div className="is-flex is-justify-content-center">
+          <Link className="is-flex is-justify-content-center" style={ widthButton } to="./planejamento">
             <button
+              style={ widthButton }
               className="button is-primary"
               type="submit"
             >
               Enviar
             </button>
-          </div>
+          </Link>
         </div>
       </div>
+    </div>
   );
 }
 
