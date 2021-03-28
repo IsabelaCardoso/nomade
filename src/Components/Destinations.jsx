@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom'
 import cardImage1 from '../image/cardImage1.jpg';
 import cardImage2 from '../image/cardImage2.svg';
 import cardImage3 from '../image/cardImage3.svg';
 import cardImage4 from '../image/cardImage4.svg';
 import cardImage5 from '../image/cardImage5.svg';
 import cardImage6 from '../image/cardImage6.svg';
-import './destinations.css';
+// import './destinations.css';
+import AirplaneIcon from '../image/airplane-icon.svg';
 
 function Destinations() {
 
@@ -87,20 +89,26 @@ function Destinations() {
   }
 
   return(
-    <div>
+    <div className="my-6">
       <h1 className="title">Montei esse planejamento conforme suas preferências</h1>
-      <div className="subtitles">
-        <img src="" alt="" />
-        <h2>Sugestões de destinos para Mês/Ano</h2>
-        <p>Selecione 1 opção:</p>
+      <div className="is-flex mb-6">
+        <div>
+          <img src={AirplaneIcon} width={45} />
+        </div>
+        <div className="is-flex-grow-1 has-text-grey ml-5">
+          <h4 className="title is-4 mb-0 has-text-grey">Sugestões de destinos para Mês/Ano</h4>
+          <p className="is-size-6">Selecione 1 opção:</p>
+        </div>
       </div>
       <div className="destiny-cards">
         <div className="columns">
         {destinyCards()}
         </div>
-        <button className="button is-medium">
-          Fazer uma nova simulação
-        </button>
+        <div className="has-text-centered">
+          <Link to="/formulario" className="button is-primary is-medium my-6">
+            Fazer uma nova simulação
+          </Link>
+        </div>
       </div>
     </div>
   )
