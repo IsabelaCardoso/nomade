@@ -5,7 +5,6 @@ import cardImage3 from '../image/cardImage3.svg';
 import cardImage4 from '../image/cardImage4.svg';
 import cardImage5 from '../image/cardImage5.svg';
 import cardImage6 from '../image/cardImage6.svg';
-// import './destinations.css';
 import AirplaneIcon from '../image/airplane-icon.svg';
 
 function Destinations() {

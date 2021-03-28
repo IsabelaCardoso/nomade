@@ -39,8 +39,8 @@ function Services() {
       desc: 'Contrate e acumule ou use suas milhas'
     },
     {
-      title: 'DICAS SMILES',
-      desc: 'Te cadastrei na nossa NewsLetter. Eu não te deixo perder nada!'
+      title: 'DICAS DA MILE',
+      desc: 'Vou te mandar nossa Newsletter semanal e qualquer novidade pode deixar que eu te aviso via SMS ou no app Smiles, certinho?'
     },
     {
       title: 'RADAS SMILES',
