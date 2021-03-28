@@ -1,4 +1,5 @@
 import './App.css';
+import './bulma.sass';
 import { Switch, Route } from 'react-router-dom';
 import Form from './Pages/Form';
 import HomePage from './Pages/HomePage';
