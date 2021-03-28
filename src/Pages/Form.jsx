@@ -225,23 +225,31 @@ function Form() {
               </div>
             </div>
           </div>
-          <div className="column is-half">
-            <div className="field mb-6">
-              <label
-                className="label has-text-weight-medium has-text-grey"
-              >
-                Quais regiões você prefere?
-              </label>
-              <div className="control">
-                <input
-                  type="text"
+          <div className="column field is-half">
+            <div className="field">
+            <label
+              className="label has-text-weight-medium has-text-grey"
+            >
+              Qual região você quer visitar?
+            </label>
+            <div className="control">
+              <div className="select is-block mb-6">
+                <select
+                  id="year"
                   value={ regions }
                   onChange={(event) => setRegions(event.target.value)}
                   className="input is-medium"
                   placeholder="Escolha a região"
-                />
+                >
+                  <option value="Norte">Norte</option>
+                  <option value="Nordeste">Nordeste</option>
+                  <option value="Centro-Oeste">Centro-Oeste</option>
+                  <option value="Sudeste">Sudeste</option>
+                  <option value="Sul">Sul</option>
+                </select>
               </div>
             </div>
+          </div>
             <div className="columns">
               <div className="column mb-6">
                 <span className="mb-5">Qual localidade você prefere?</span>
