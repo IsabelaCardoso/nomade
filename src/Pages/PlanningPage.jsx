@@ -8,10 +8,12 @@ function PlanningPage() {
   return(
     <div>
       <Header />
-      <Destinations />
-      <MicroGoals />
-      <Consultants/>
-      <Services />
+      <div className="container">
+        <Destinations />
+        <MicroGoals />
+        <Consultants />
+        <Services />
+      </div>
     </div>
   )
 }
