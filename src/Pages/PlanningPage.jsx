@@ -3,6 +3,7 @@ import MicroGoals from "../Components/MicroGoals";
 import Consultants from "../Components/Consultants";
 import Services from "../Components/Services";
 import Header from "../Components/Header";
+import Footer from '../Components/Footer';
 
 function PlanningPage() {
   return(
@@ -14,6 +15,7 @@ function PlanningPage() {
         <Consultants />
         <Services />
       </div>
+      <Footer />
     </div>
   )
 }

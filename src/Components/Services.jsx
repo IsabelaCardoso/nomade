@@ -9,9 +9,9 @@ import servicesCard8 from '../image/servicesCard8.svg';
 import servicesCard9 from '../image/servicesCard9.svg';
 import servicesCard10 from '../image/servicesCard10.svg';
 import wpp from '../image/wpp.svg';
+import services from '../image/services-icon.svg';
 
 function Services() {
-
   const servicesImgCards = [ servicesCard1, servicesCard2,
     servicesCard3, servicesCard4, servicesCard5,
     servicesCard6, servicesCard7, servicesCard8,
@@ -63,7 +63,7 @@ function Services() {
   function servicesCards() {
     const map = servicesArr.map((service, index) => {
       return(
-        <div className="card column">
+        <div className="card column is-2 mb-4">
           <div className="card-image">
             <figure className="image is-4by3">
               <img
@@ -87,18 +87,28 @@ function Services() {
   }
 
   return(
-    <div>
+    <div className="my-6">
       <div className="subtitles">
-        {/* <img src={} alt="" /> */}
-        <h3>Serviços Smiles</h3>
-        <p>Te ajudam a alcançar mais rápido seu objetivo</p>
-        <div>
+        <div className="is-flex mb-6">
+          <div>
+            <img src={services} width={65} />
+          </div>
+          <div className="is-flex-grow-1 has-text-grey ml-5">
+            <h4 className="title is-4 mb-0 has-text-grey">Serviços Smiles</h4>
+            <p className="is-size-6">Te ajudam a alcançar mais rápido seu objetivo</p>
+          </div>
+        </div>
+        <div className="columns is-multiline is-centered my-6">
           {servicesCards()}
         </div>
-        <div className="notification is-success">
-          <img src={wpp} alt="símbolo de um telefone"/>
-        Convide uma pessoa incrível para ser nomadê
-        <button class="button is-success">Convidar</button>
+
+
+        <div className="mx-6 px-6">
+          <div className="notification is-success mx-6 is-flex is-justify-content-space-around is-align-items-center">
+            <img src={wpp} alt="símbolo de um telefone"/>
+            <span className="is-size-4 has-text-weight-bold">Convide uma pessoa incrível para ser nomadê</span>
+            <button class="button is-light is-medium is-outlined">Convidar</button>
+          </div>
         </div>
       </div>
     </div>

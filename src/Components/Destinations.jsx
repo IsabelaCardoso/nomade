@@ -90,13 +90,13 @@ function Destinations() {
 
   return(
     <div className="my-6">
-      <h1 className="title">Montei esse planejamento conforme suas preferências</h1>
+      <h1 className="title has-text-primary">Montei esse planejamento conforme suas preferências</h1>
       <div className="is-flex mb-6">
         <div>
           <img src={AirplaneIcon} width={45} />
         </div>
         <div className="is-flex-grow-1 has-text-grey ml-5">
-          <h4 className="title is-4 mb-0 has-text-grey">Sugestões de destinos para Mês/Ano</h4>
+          <h4 className="title is-4 mb-0 has-text-grey">Sugestões de destinos para Agosto/2021</h4>
           <p className="is-size-6">Selecione 1 opção:</p>
         </div>
       </div>
