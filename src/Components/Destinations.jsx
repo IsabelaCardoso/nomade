@@ -6,7 +6,6 @@ import cardImage5 from '../image/cardImage5.svg';
 import cardImage6 from '../image/cardImage6.svg';
 import './destinations.css';
 
-
 function Destinations() {
 
   const imgsArray = [
