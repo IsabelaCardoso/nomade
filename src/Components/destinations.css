@@ -1,0 +1,13 @@
+.columns {
+  display: flex;
+  background-color: blue;
+  justify-content: center;
+  width: 90%;
+}
+
+.button {
+  background-color: #FF5E19;
+  color: white
+}
+.column {
+}

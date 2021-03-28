@@ -1,7 +1,20 @@
+import cardImage1 from '../image/cardImage1.jpg';
+import cardImage2 from '../image/cardImage2.svg';
+import cardImage3 from '../image/cardImage3.svg';
+import cardImage4 from '../image/cardImage4.svg';
+import cardImage5 from '../image/cardImage5.svg';
+import cardImage6 from '../image/cardImage6.svg';
+import './destinations.css';
+
+
 function Destinations() {
+
+  const imgsArray = [
+    cardImage1, cardImage2, cardImage3,
+    cardImage4, cardImage5, cardImage6
+  ]
   const destinations = [
     {
-      imgId: 1,
       name: "Salvador (SSA)",
       from: "Saindo de: SÃO PAULO (GRU)",
       valueRange: "a partir de:",
@@ -9,7 +22,6 @@ function Destinations() {
       paymentType: "milhas/trecho" 
     },
     {
-      imgId: 2,
       name: "Recife (REC)",
       from: "Saindo de: SÃO PAULO (GRU)",
       valueRange: "a partir de:",
@@ -17,7 +29,6 @@ function Destinations() {
       paymentType: "milhas/trecho" 
     },
     {
-      imgId: 3,
       name: "Fortaleza (FOR)",
       from: "Saindo de: SÃO PAULO (GRU)",
       valueRange: "a partir de:",
@@ -25,7 +36,6 @@ function Destinations() {
       paymentType: "milhas/trecho" 
     },
     {
-      imgId: 4,
       name: "Natal (NAT)",
       from: "Saindo de: SÃO PAULO (GRU)",
       valueRange: "a partir de:",
@@ -33,7 +43,6 @@ function Destinations() {
       paymentType: "milhas/trecho" 
     },
     {
-      imgId: 5,
       name: "São Luiz (SLZ)",
       from: "Saindo de: SÃO PAULO (GRU)",
       valueRange: "a partir de:",
@@ -41,7 +50,6 @@ function Destinations() {
       paymentType: "milhas/trecho" 
     },
     {
-      imgId: 6,
       name: "Maceio (MCZ)",
       from: "Saindo de: SÃO PAULO (GRU)",
       valueRange: "a partir de:",
@@ -51,25 +59,19 @@ function Destinations() {
   ]
 
   function destinyCards() {
-    console.log('chegou linha 25')
-    const map = destinations.map((destiny) => {
-      // let imgPath = `../image/cardImage${destiny.imgId}.svg`;
-      console.log(destiny)
+    const map = destinations.map((destiny, index) => {
       return(
         <div className="card column">
           <div className="card-image">
             <figure className="image is-4by3">
-              {/* <img src={require(imgPath)} alt="destination city" /> */}
-              {/* <img src={cardImage2} alt="destination city" /> */}
+              <img
+                src={imgsArray[index]}
+                alt="destination city"
+              />
             </figure>
           </div>
           <div className="card-content">
             <div className="media">
-              <div className="media-left">
-                <figure className="image is-48x48">
-                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"/>
-                </figure>
-              </div>
               <div className="media-content">
                 <p className="title is-4">{destiny.name}</p>
                 <p className="subtitle is-6">{destiny.from}</p>
@@ -95,7 +97,7 @@ function Destinations() {
         <div className="columns">
         {destinyCards()}
         </div>
-        <button>
+        <button className="button is-medium">
           Fazer uma nova simulação
         </button>
       </div>
