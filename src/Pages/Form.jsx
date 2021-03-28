@@ -10,6 +10,8 @@ function Form() {
   const [countryCapital, setCountryCapital] = useState();
   const [regions, setRegions] = useState('');
   const [nacionality, setNationality] = useState();
+  const [month, setMonth] = useState();
+  const [year, setYear] = useState();
 
   function handleCheck(event) {
     const checked = services.includes(event.target.id);
@@ -165,17 +167,6 @@ function Form() {
         </div>
         <div className="main-right">
           <div className="row">
-            <label>
-              Quais regiões você prefere?
-              <input
-                type="text"
-                id="capital"
-                name="regions"
-                onChange={ (event) => setRegions(event.target.value) }
-              />
-            </label>
-          </div>
-          <div className="row">
             <div className="col">
               <span>Qual localidade você prefere?</span>
               <label>
@@ -232,6 +223,39 @@ function Form() {
                 Internacional
               </label>
             </div>
+          </div>
+          <div className="row">
+            <span>Mês de previsão de ida</span>
+            <select
+              id="month"
+              value={ month }
+              onChange={(event) => setMonth(event.target.value)}
+            >
+              <option value="january">01 (Janeiro)</option>
+              <option value="february">02 (Fevereiro)</option>
+              <option value="march">03 (Março)</option>
+              <option value="april">04 (Abril)</option>
+              <option value="may">05 (Maio)</option>
+              <option value="june">06 (Junho)</option>
+              <option value="july">07 (Julho)</option>
+              <option value="august">08 (Agosto)</option>
+              <option value="september">09 (Setembro)</option>
+              <option value="october">10 (Outubro)</option>
+              <option value="november">11 (Novembro)</option>
+              <option value="december">12 (Dezembro)</option>
+
+            </select>
+
+            <span>Ano</span>
+            <select
+              id="year"
+              value={ year }
+              onChange={(event) => setYear(event.target.value)}
+            >
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
           </div>
           <div className="row">
             <Link to="./planejamento">
