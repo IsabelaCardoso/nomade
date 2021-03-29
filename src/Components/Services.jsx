@@ -75,7 +75,7 @@ function Services() {
           <div className="card-content">
             <div className="media">
               <div className="media-content">
-                <p className="title is-4">{service.title}</p>
+                <p className="title is-5">{service.title}</p>
                 <p className="subtitle is-6">{service.desc}</p>
               </div>
             </div>
@@ -91,7 +91,7 @@ function Services() {
       <div className="subtitles">
         <div className="is-flex mb-6">
           <div>
-            <img src={services} width={65} />
+            <img src={services} width={65} alt=""/>
           </div>
           <div className="is-flex-grow-1 has-text-grey ml-5">
             <h4 className="title is-4 mb-0 has-text-grey">Serviços Smiles</h4>
