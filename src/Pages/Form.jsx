@@ -1,6 +1,7 @@
 import Header from '../Components/Header';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../Components/Footer';
 
 function Form() {
   const [city, setCity] = useState('');
@@ -37,7 +38,7 @@ function Form() {
           <br />
           sua trilha
         </h1>
-        <h2 className="subtitle has-text-grey">DADOS PESSOAIS</h2>
+        <h2 className="subtitle has-text-grey">ME DIGA SEU PLANEJAMENTO</h2>
         <hr />
         <div className="columns">
           <div className="column is-half">
@@ -363,6 +364,7 @@ function Form() {
           </Link>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

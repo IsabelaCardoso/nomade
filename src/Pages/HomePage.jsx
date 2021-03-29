@@ -12,13 +12,12 @@ function HomePage() {
   return(
     <div>
       <Header />
-
       <div className="container pb-6 mb-6">
         <div className="hero is-halfheight">
           <div className="hero-body columns is-align-items-center mt-4">
             <div className="column has-text-right pr-6">
-              <p className="title has-text-primary is-1 has-text-weight-bold">Olá, eu sou a Mile!</p>
-              <p className="is-size-4 has-text-grey">E vou te ajudar a fazer parte nosso</p>
+              <p className="title has-text-primary is-1 has-text-weight-bold">Olá, eu sou a Mile,</p>
+              <p className="is-size-4 has-text-grey">E vou te ajudar a alcançar seu sonho de viajar pelo mundo sendo um</p>
               <p className="has-text-info is-size-4 has-text-weight-bold">Nomadê Smiles</p>
             </div>
             <div className="column pl-6">
@@ -31,7 +30,7 @@ function HomePage() {
 
         <div className="has-text-centered has-text-grey is-size-3 p-6 m-6">
           <p>
-            Nômade Digital é uma pessoa que aproveita sua <span className="has-text-weight-bold">liberdade</span> para viajar,<br /> conhecendo novos lugares, culturas e pessoas.
+            Nômade Digital é uma pessoa que aproveita sua <span className="has-text-weight-bold">liberdade</span> de trabalhar remotamente para viajar,<br /> conhecendo novos lugares, culturas e pessoas.
           </p>
           <p className="has-text-weight-bold">
             Nomadê é quem usa Smiles como parceira nessa trajetória
