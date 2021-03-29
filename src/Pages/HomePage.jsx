@@ -17,7 +17,7 @@ function HomePage() {
           <div className="hero-body columns is-align-items-center mt-4">
             <div className="column has-text-right pr-6">
               <p className="title has-text-primary is-1 has-text-weight-bold">Olá, eu sou a Mile,</p>
-              <p className="is-size-4 has-text-grey">E vou te ajudar a alcançar seu sonho de viajar pelo mundo sendo um</p>
+              <p className="is-size-4 has-text-grey">E vou te ajudar a alcançar seu sonho de viajar pelo mundo sendo uma pessoa</p>
               <p className="has-text-info is-size-4 has-text-weight-bold">Nomadê Smiles</p>
             </div>
             <div className="column pl-6">
